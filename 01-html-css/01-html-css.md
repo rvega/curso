@@ -170,7 +170,7 @@ O "inline" en el documento. Esto no se recomienda pero en ocasiones es necesario
 [Referencia de propiedades](http://www.w3schools.com/cssref/default.asp)
 
 
-## 1.7. Ejecricio.
+## 1.7. Ejercicio.
 
 * (15 minutos) Copie cualquier texto de wikipedia, escribalo en HTML y crée un minimo de estilos para que el documento se vea bien. Incluya una imágen y listados usando &lt;img&gt;, &lt;ul&gt; y &lt;li&gt;.
 
@@ -178,4 +178,113 @@ O "inline" en el documento. Esto no se recomienda pero en ocasiones es necesario
 
 ## 1.8. Diagramación
 
+### 1.8.2 Inline vs Block level.
 
+Un ejemplo:
+
+    <!DOCTYPE HTML>
+    <html>
+      <head>
+        <meta charset="utf-8"/>
+        <title>Hola!</title>
+        <style type="text/css" media="all">
+          #block-level-elements *{
+            border: 1px solid blue;
+            width: 500px; 
+            height: 50px; 
+            margin: 10px;
+            padding: 0px;
+          } 
+
+          #inline-elements{
+            border: 1px solid blue;
+            padding: 10px;
+          }
+
+          #inline-elements * {
+            border: 1px solid red;
+            width: 500px; 
+            height: 50px; 
+            margin: 10px;
+            padding: 0px;
+          } 
+        </style>
+      </head>
+      <body>
+        <h3>Algunos elementos "block"</h3>
+        <div id="block-level-elements">
+          <h1>&lt;h1&gt;</h1>
+          <p>&lt;p&gt;</p>
+          <form>&lt;form&gt;</form>
+          <div>&lt;div&gt;</div>
+          <ul>&lt;ul&gt;</ul>
+          <nav>&lt;nav&gt;</nav>
+        </div>
+
+        <h3>Algunos elementos "inline"</h3>
+        <div id="inline-elements">
+          <a>&lt;a&gt;</a>
+          <span>&lt;span&gt;</span>
+          <code>&lt;code&gt;</code>
+          <i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</i>
+        </div>
+
+      </body>
+    </html>
+     
+### 1.8.2 Posiciones relativas
+
+    <!DOCTYPE HTML>
+    <html>
+      <head>
+        <meta charset="utf-8"/>
+        <title>Hola!</title>
+        <style type="text/css" media="all">
+          #block-level-elements *{
+            border: 1px solid blue;
+            width: 500px; 
+            height: 50px; 
+            margin: 10px;
+            padding: 0px;
+          } 
+
+          #posicion-absoluta{
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 200px;
+            padding: 10px;
+            background-color: #DDD;
+            z-index: 200;
+            box-shadow: 10px 10px 20px #888888;
+            border-radius: 5px;
+          }
+
+        </style>
+      </head>
+      <body>
+        <h3>Algunos elementos "block"</h3>
+        <div id="block-level-elements">
+          <h1>&lt;h1&gt;</h1>
+          <p>&lt;p&gt;</p>
+          <form>&lt;form&gt;</form>
+          <div>&lt;div&gt;</div>
+          <ul>&lt;ul&gt;</ul>
+          <nav>&lt;nav&gt;</nav>
+        </div>
+
+        <div id="posicion-absoluta">
+          <h3>Posicion absoluta</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        </div>
+
+      </body>
+    </html>
+     
+## 1.9 Ejercicio
+
+* (15 minutos) Ponga el artículo del ejercicio anterior en dos columnas y haga que el título encabece las dos columnas.
+
+## 1.10 Ejercicio
+
+* (1 hora) Diseñe e implemente con HTML y CSS la interfaz de una aplicación para administrar tareas (To-Dos).

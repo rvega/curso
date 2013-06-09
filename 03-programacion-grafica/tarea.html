@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Circulos</title>
+
+    <style type="text/css" media="all">
+      html{
+        background-color: #222;
+        margin:0px;
+        padding:0px;
+      } 
+    </style>
+
+    <script src="kinetic.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      window.onload = function(){
+
+        var colors = ['#3182bd', '#6baed6', '#9ecae1', '#c6dbef', '#e6550d', '#fd8d3c', '#fdae6b', '#fdd0a2', '#31a354', '#74c476', '#a1d99b', '#c7e9c0', '#756bb1', '#9e9ac8', '#bcbddc', '#dadaeb', '#636363', '#969696', '#bdbdbd', '#d9d9d9'];
+
+        var stage = new Kinetic.Stage({
+          container: 'container',
+          width: 800,
+          height: 600
+        });
+
+        var layer = new Kinetic.Layer();
+        stage.add(layer);
+
+        var background = new Kinetic.Rect({
+          x: 0,
+          y: 0,
+          width: stage.getWidth(),
+          height: stage.getHeight(),
+          fill: '#222',
+        })        
+        layer.add(background);
+        layer.draw();
+
+        var i = 0;
+        stage.on('mousemove', function(){
+          var mousePos = stage.getMousePosition();
+
+          i++;
+          if(i>colors.length) i=0;
+
+          var circle = new Kinetic.Circle({
+            x: mousePos.x,
+            y: mousePos.y,
+            radius: 1e-6,
+            fill: 'none',
+            stroke: colors[i],
+            strokeWidth: 1.5
+          });
+          layer.add(circle);
+
+          var tween = new Kinetic.Tween({
+            node: circle, 
+            duration: 2,
+            radius:100,
+            opacity: 1e-6,
+            easing: Kinetic.Easings.EaseOut,
+            onFinish: function(){
+              circle.destroy();
+            }
+          });
+
+          // layer.draw();
+          tween.play();
+        });
+
+      }
+    </script>
+  </head>
+  <body>
+    <div id="container"></div> 
+</html>

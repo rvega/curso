@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Hola!</title>
+    <style type="text/css" media="all">
+      #block-level-elements *{
+        border: 1px solid blue;
+        width: 500px; 
+        height: 50px; 
+        margin: 10px;
+        padding: 0px;
+      } 
+
+      #inline-elements{
+        border: 1px solid blue;
+        padding: 10px;
+      }
+
+      #inline-elements * {
+        border: 1px solid red;
+        width: 500px; 
+        height: 50px; 
+        margin: 10px;
+        padding: 0px;
+      } 
+    </style>
+  </head>
+  <body>
+    <h3>Algunos elementos "block"</h3>
+    <div id="block-level-elements">
+      <h1>&lt;h1&gt;</h1>
+      <p>&lt;p&gt;</p>
+      <form>&lt;form&gt;</form>
+      <div>&lt;div&gt;</div>
+      <ul>&lt;ul&gt;</ul>
+      <nav>&lt;nav&gt;</nav>
+    </div>
+
+    <h3>Algunos elementos "inline"</h3>
+    <div id="inline-elements">
+      <a>&lt;a&gt;</a>
+      <span>&lt;span&gt;</span>
+      <code>&lt;code&gt;</code>
+      <i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</i>
+    </div>
+
+  </body>
+</html>
